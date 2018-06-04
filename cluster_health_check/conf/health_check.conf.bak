@@ -1,0 +1,104 @@
+[DEFAULT]
+
+#
+# From cluster_health_check.conf
+#
+
+#
+#     Whether to open the debug the default Fasle.
+#      (boolean value)
+debug = True
+
+#
+#     log_config_append is set. (string value)
+#      (string value)
+log_file = cluster_health_check.log
+
+#
+#     is ignored if log_config_append is set. (string value)
+#      (string value)
+log_dir = /var/log/cluster_health_check
+
+#
+#     # Log output to standard error. This option is ignored if
+# log_config_append is
+#     # set. (boolean value)
+#      (boolean value)
+#use_stderr = false
+
+#
+#    Said how long interval executable program Unit s
+#     (integer value)
+#interval = 60
+
+
+[compute]
+#
+# Compute monitoring service scope
+
+#
+# From cluster_health_check.conf
+#
+
+#
+#     Possible Values:
+#
+#     * A list of JSON values which describe the aliases. For example:
+#
+#         monitor_service_item = {
+#           "nova": "service",
+#           "nfs": "extra",
+#           "/var/lib/glance/images": "disk",
+#           "syncFrog": "process"
+#         }
+#
+#      (multi valued)
+#monitor_service_item =
+
+
+[controller_master]
+#
+# With the range of public VIP controller monitoring
+
+#
+# From cluster_health_check.conf
+#
+
+#
+#     Possible Values:
+#
+#     * A list of JSON values which describe the aliases. For example:
+#
+#         monitor_service_item = {
+#           "nova": "service",
+#           "nfs": "extra",
+#           "/var/lib/glance/images": "disk",
+#           "syncFrog": "process"
+#         }
+#
+#      (multi valued)
+monitor_service_item = {"nova": "service","httpd": "service","nfs": "extra","/var/lib/glance/images": "disk","syncFrog": "process"}
+
+
+[controller_standby]
+#
+# With the range of standby controller monitoring
+
+#
+# From cluster_health_check.conf
+#
+
+#
+#     Possible Values:
+#
+#     * A list of JSON values which describe the aliases. For example:
+#
+#         monitor_service_item = {
+#           "nova": "service",
+#           "nfs": "extra",
+#           "/var/lib/glance/images": "disk",
+#           "syncFrog": "process"
+#         }
+#
+#      (multi valued)
+#monitor_service_item =
